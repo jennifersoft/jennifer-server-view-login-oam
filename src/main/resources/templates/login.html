@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script>
+        function login() {
+            var frm = document.getElementById("frm");
+            frm.submit();
+        }
+    </script>
+</head>
+<body>
+    <a href="javascript:login()">Login</a>
+
+    <form id="frm" th:method="${method}" action="/jennifer/login/sso">
+        <input type="hidden" name="id" th:value="${id}" />
+    </form>
+</body>
+</html>

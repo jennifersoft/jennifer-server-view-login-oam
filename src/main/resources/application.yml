@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: api-gateway-demo
+
+server:
+  port: 8080
+
+ribbon:
+  eureka:
+    enabled: false
+
+zuul:
+  sensitive-headers:
+  host:
+    connect-timeout-millis: 600000
+    socket-timeout-millis: 600000
+  routes:
+    jennifer-sso:
+      path: /jennifer/**
+      url: http://localhost:7900
+      stripPrefix: true
